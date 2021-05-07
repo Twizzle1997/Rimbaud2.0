@@ -7,6 +7,7 @@ class Article(models.Model):
     body = models.CharField(max_length=2000)
     description = models.CharField(max_length=200)
     limitdate = models.DateField('limitdate')
+    title = models.CharField(max_length=60)
     created_date = models.DateTimeField(default=timezone.now)
     release = models.DateTimeField(blank=True, null=True)
 
@@ -14,11 +15,11 @@ class Article(models.Model):
         self.release = timezone.now()
         self.save()
 
-    def __str__(self):
-        return self.title
+#     def __str__(self):
+#         return self.title
 
-class Meta:
-    ordering = ['title', 'limitedate']
-    release = models.DateField('limitdate')    
-    title = models.CharField(max_length=60)
+# class Meta:
+#     ordering = ['title', 'limitedate']
+#     release = models.DateField('limitdate')    
+#     title = models.CharField(max_length=60)
     

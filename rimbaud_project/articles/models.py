@@ -8,6 +8,7 @@ class Article(models.Model):
     description = models.CharField('Description', max_length=200)
     limitdate = models.DateTimeField('Date de péremption')
     title = models.CharField('Titre de l\'article', max_length=60)
+    release = models.DateTimeField('Date de publication', default=timezone.now())
 
     def publish(self):
         self.release = timezone.now()

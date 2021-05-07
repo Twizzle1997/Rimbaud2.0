@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.urls.conf import include
 from articles.models import Article
+#from django.utils import timezone
 
 def index(request):
     articles = Article.objects.all().order_by('release')

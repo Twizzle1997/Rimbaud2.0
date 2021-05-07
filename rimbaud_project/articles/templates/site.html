@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr" >
+<head>
+        <meta charset="utf-8" >
+        <title>
+                {% block title %}{% endblock %}
+        </title>
+        <link rel="stylesheet" href="{% static/css/theme.css %}" >
+</head>
+<body>
+        <header>
+        <h2> Rambaud 2.0, la référence littéraire incontournable ! </h2>
+        </header>
+
+        <section>
+                {% block content %}
+                {% endblock %}
+        </section>
+
+        <footer>
+                <em>Copyright les petits pedestres (dont un au lion), 2021</em>
+        </footer>
+</body>
+</html>

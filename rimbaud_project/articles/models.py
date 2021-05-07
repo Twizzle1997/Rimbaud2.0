@@ -2,13 +2,11 @@ from django.db import models
 from django.conf import settings
 from django.utils import timezone
 
-# Create your models here.
 class Article(models.Model):
-    title = models.CharField(max_length=60)
-    description = models.CharField(max_length=200)
-    body = models.CharField(max_length=2000)
-    limitdate = models.DateField('limitdate')
     adminonly = models.BooleanField()
+    body = models.CharField(max_length=2000)
+    description = models.CharField(max_length=200)
+    limitdate = models.DateField('limitdate')
     created_date = models.DateTimeField(default=timezone.now)
     release = models.DateTimeField(blank=True, null=True)
 
@@ -21,3 +19,6 @@ class Article(models.Model):
 
 class Meta:
     ordering = ['title', 'limitedate']
+    release = models.DateField('limitdate')    
+    title = models.CharField(max_length=60)
+    

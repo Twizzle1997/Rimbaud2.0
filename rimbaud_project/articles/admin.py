@@ -1,6 +1,8 @@
 from django.contrib import admin
-from myproject.myapp.models import Author
+from rimbaud_project.articles.models import Article
 
+@admin.register(Article)
 class AuthorAdmin(admin.ModelAdmin):
-    pass
-admin.site.register(Author, AuthorAdmin)
+    fields = ('title', 'description', 'body')
+
+admin.site.register(Article, AuthorAdmin)

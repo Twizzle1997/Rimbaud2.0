@@ -1,8 +1,7 @@
 from django.contrib import admin
-from rimbaud_project.articles.models import Article
+from .models import Article
+
 
 @admin.register(Article)
 class AuthorAdmin(admin.ModelAdmin):
-    fields = ('title', 'description', 'body')
-
-admin.site.register(Article, AuthorAdmin)
+    fields = ('title', 'description', 'body', 'limitdate', 'adminonly', 'created_date', 'release')

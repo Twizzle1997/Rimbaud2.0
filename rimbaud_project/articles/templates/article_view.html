@@ -1,0 +1,15 @@
+{% extends 'site.html' %}
+{% block content %}
+<div class="article_body">
+    <div class="article_header">
+        <h1><span>{% if article.adminonly %}SECRET{% endif %}</span> {{article.name}}</h1>
+        <h3>{{article.description</h3>
+        <p>Publié le {{article.release}}</p>
+    </div>    
+
+    <div class="body_article">
+        {{article.body}}
+    </div>
+</div>
+
+{% endblock %}

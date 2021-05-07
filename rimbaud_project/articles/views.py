@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
+from django.urls.conf import include
+from articles.models import Article
 
 def index(request):
-    return HttpResponse('<div style="background-color:red"><b>Salut salut je suis un retour http</b></div>')
+    articles = Article.objects.all().order_by('release')
+    return render(request, template_name='articles_list.html', context={'articles':articles})
 
-def toto(request):
-    return HttpResponse('<div style="width:200px; height:200px; background-color:green"></div>')
+def article(request, id):
+    article = Article.objects.get(id=id)
+    return render(request, template_name='article_view.html', context={'article':article})

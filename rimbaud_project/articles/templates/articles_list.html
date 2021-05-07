@@ -1,0 +1,25 @@
+{% extends 'site.html' %}
+{% block content %}
+<h1>Tous les articles</h1>
+<div>
+{% for article in articles %}
+        <a href="/article?id={{article.id}}">
+            <div class="article">
+           
+                <h3>
+                {% if article.adminonly %}
+                        <span class="adminonly">{{article.name}}</span>
+                {% else %}
+                        {{article.name}}
+                {% endif %}
+                </h3>
+                <h4>{{article.description }} </h4>
+                <p>
+                Publié le : {{article.release}}
+                </p>
+            
+            </div>
+        </a>
+{% endfor %}
+</div>
+{% endblock %}

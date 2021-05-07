@@ -1,18 +1,8 @@
 {% extends 'site.html' %}
 {% block content %}
-<h1>Tous les articles</h1>
+<h1>Résultats de la recherche {{words}}</h1>
 <div>
-
-    <script type="text/javascript">
-        function search() {
-            let $words = document.getElementById("article-search").value;
-            return window.location.href="search/"+$words
-            };
-    </script>
-
-    <input type="search" id="article-search" name="search", placeholder="Recherche par mot clef">
-    <input type=button onclick=search(); value=chercher />
-
+    {% if articles.len==0%}
     {% for article in articles %}
             <a href="article/{{article.id}}/">
                 <div class="article">
@@ -33,4 +23,5 @@
             </a>
     {% endfor %}
 </div>
+<a href="/"><button>Retour</button></a>
 {% endblock %}

@@ -40,15 +40,23 @@ Get a local copy up and running following these steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-* Prepare and make the migrations to update your dataase.  
-``` python manage.py makemigrations ```  
-```python manage.py migrate```
+* Prepare and make the migrations to update your database.  
+```sh
+python manage.py makemigrations
+```  
+```sh
+python manage.py migrate
+```
 
 * launch the server by running the command :  
-``` python manage.py runserver  ```
+```sh
+python manage.py runserver
+```
 
 * You may have to create super user ids running these commands :  
-``` python manage.py createsuperuser ```
+```sh
+python manage.py createsuperuser
+```
 
 ### Routes
 * ```/``` all the current articles  

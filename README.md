@@ -61,7 +61,7 @@ Get a local copy up and running following these steps.
 ### Routes
 * ```/``` all the current articles  
 * ```/article/{id}``` body of the target article    
-* ```/admin/login``` administration pannel to create and manage the articles  
+* ```/admin/login``` connection to the administration pannel to create and manage the articles  
 * ```/search/{word}``` search articles by key word   
 *
 ## Settings
